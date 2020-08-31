@@ -1,11 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Mar 16 14:38:10 2018
-
-@author: vl-tshzzz
-"""
-
-import torch
 import torch.nn as nn
 from yolo.decoder import yolo_decoder
 from yolo.darknet import darknet_19, conv_block
