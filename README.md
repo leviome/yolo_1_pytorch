@@ -53,3 +53,6 @@ Detect single image
 ```
 python detect.py
 ```
+Demo
+---
+
