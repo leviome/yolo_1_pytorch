@@ -17,5 +17,27 @@ Dataset preparation
 ---
 1. Download voc2007 dataset:
 ```
-wget -c 
+wget -c http://pjreddie.com/media/files/VOCtrainval_06-Nov-2007.tar
+wget -c http://pjreddie.com/media/files/VOCtest_06-Nov-2007.tar
+wget -c http://pjreddie.com/media/files/VOCdevkit_08-Jun-2007.tar
 ```
+2. Extract all tars:
+```
+tar xvf VOCtrainval_06-Nov-2007.tar
+tar xvf VOCtest_06-Nov-2007.tar
+tar xvf VOCdevkit_08-Jun-2007.tar
+```
+3. put the data into dataset/voc2007 and make the folder structure look like:
+```
+dataset
+├── voc2007
+│   ├── Annotations
+│   ├── ImageSets
+│   ├── JPEGImages
+│   ├── Label
+│   ├── SegmentationClass
+│   └── SegmentationObject
+└── voc2012
+```
+4. fit yolo model as pytorch dataset format:
+
