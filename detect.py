@@ -44,15 +44,31 @@ def _run():
     model.eval()
     print('load model...')
 
-    idx = 72
-    img = dataset[idx]['img']
-    boxlist = dataset[idx]['boxlist']
+    idx = 88
+    # img = dataset[idx]['img']
+    # boxlist = dataset[idx]['boxlist']
+    #
+    # img = draw_box(img, boxlist)
+    # plt.figure(figsize=(10, 10))
+    # plt.imshow(img)
+    # plt.show()
 
-    img = draw_box(img, boxlist)
+    img = dataset[idx]['img']
+    img = cv2.resize(img, (448, 448))
+    img = torch.from_numpy(img).float() / 255.
+
+    img = img.unsqueeze(0)
+    img = img.permute(0, 3, 1, 2)
+    img = img.cuda()
+    boxlist = model(img)
+
+    img = dataset[idx]['img']
+
+    boxlist[0].resize((img.shape[1], img.shape[0]))
+    img = draw_box(img, boxlist[0], conf=0.1)
     plt.figure(figsize=(10, 10))
     plt.imshow(img)
     plt.show()
-
 
 if __name__ == '__main__':
     _run()
