@@ -39,5 +39,17 @@ dataset
 │   └── SegmentationObject
 └── voc2012
 ```
-4. fit yolo model as pytorch dataset format:
-
+4. fit voc dataset to yolo model as pytorch dataset format:
+```
+python fit_voc_to_yolo.py
+```
+Train
+---
+```
+python train.py
+```
+Detect single image
+---
+```
+python detect.py
+```
