@@ -47,6 +47,11 @@ def train():
 
     model = create_yolov1(model_cfg)
     model = model.to(device)
+    if osp.exists('best_model.pth'):
+        checkpoint = torch.load('best_model.pth')
+        data_dict = {k.replace('module.', ''): v for k, v in checkpoint.items()}
+        model.load_state_dict(data_dict, strict=True)
+        model.cuda()
 
     optimizer = torch.optim.Adam(model.parameters(),
                                  lr=lr[0],
@@ -68,4 +73,3 @@ def train():
 
 if __name__ == '__main__':
     train()
-
