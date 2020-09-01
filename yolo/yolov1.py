@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import torch
 import torch.nn as nn
 from yolo.decoder import yolo_decoder
 from yolo.darknet import darknet_19, conv_block
