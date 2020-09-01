@@ -137,7 +137,7 @@ class YOLO(nn.Module):
 
 
 if __name__ == '__main__':
-    from data.datasets import VOCDatasets
+    from data_utils.datasets import VOCDatasets
 
     net = YOLO(20, conv_mode=True).cuda()
 
