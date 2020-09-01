@@ -179,17 +179,19 @@ class Grid(object):
         #        mask = 1*(np.random.randint(0,3,[hh,ww])>0)
         mask = mask[(hh - h) // 2:(hh - h) // 2 + h, (ww - w) // 2:(ww - w) // 2 + w]
 
-        mask = torch.from_numpy(mask).float()
-        if self.mode == 1:
-            mask = 1 - mask
+        mask_cp = mask.copy()
 
-        mask = mask.expand_as(img)
+        mask_tensor = torch.from_numpy(mask_cp).float()
+        if self.mode == 1:
+            mask_tensor = 1 - mask_tensor
+
+        mask_tensor = mask_tensor.expand_as(img)
         if self.offset:
             offset = torch.from_numpy(2 * (np.random.rand(h, w) - 0.5)).float()
-            offset = (1 - mask) * offset
-            img = img * mask + offset
+            offset = (1 - mask_tensor) * offset
+            img = img * mask_tensor + offset
         else:
-            img = img * mask
+            img = img * mask_tensor
 
         return img, label
 
