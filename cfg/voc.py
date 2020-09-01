@@ -1,6 +1,6 @@
 train_cfg = dict()
 train_cfg['lr'] = [0.5e-3, 1e-5]
-train_cfg['epochs'] = 75
+train_cfg['epochs'] = 750
 train_cfg['milestone'] = [40, 60]
 train_cfg['gamma'] = 0.1
 train_cfg['batch_size'] = 16
