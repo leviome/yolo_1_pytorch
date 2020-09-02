@@ -29,6 +29,7 @@ layer_configs = [
     (1024, 3, False),
 ]
 
+
 def load_conv_bn(buf, start, conv_model, bn_model):
     num_w = conv_model.weight.numel()
 
@@ -47,6 +48,8 @@ def load_conv_bn(buf, start, conv_model, bn_model):
     start = start + num_w
 
     return start
+
+
 class conv_block(nn.Module):
 
     def __init__(self, inplane, outplane, kernel_size, pool, stride=1):
