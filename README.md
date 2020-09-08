@@ -5,6 +5,7 @@
 ##### paper: [You Only Look Once: Unified, Real-Time Object Detection](https://arxiv.org/pdf/1506.02640.pdf)
 ##### CSDN blog: [博客解析](https://muzhan.blog.csdn.net/article/details/82588059)
 This repo is a brief implementation of yolo v1. You can easily train the model and visualize the result.
+![imgs](https://github.com/leviome/yolo_1_pytorch/blob/master/imgs/yolo.png)
 ```
 git clone https://github.com/leviome/yolo_1_pytorch.git
 cd yolo_1_pytorch
