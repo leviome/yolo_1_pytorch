@@ -7,9 +7,9 @@
 This repo is a brief implementation of yolo v1. You can easily train the model and visualize the result.
 
 ![img](https://github.com/leviome/yolo_1_pytorch/blob/master/imgs/yolo.PNG)
-|output tensor:|S × S × (B ∗ 5 + C)| |S:|num of grids| |B:|num of boxes| |C:|num of classes|
+|output tensor:|S×S×(B∗5+C)| |S:|num of grids| |B:|num of boxes| |C:|num of classes|
 |---|---|---|---|---|---|---|---|---|---|---|
-| |7 x 7 x (2 * 5 + 20)| | |7| | |2| | |20|
+| |7x7x(2*5+20)| | |7| | |2| | |20|
 
 ---
 ```
